@@ -22,7 +22,7 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index");
     
 // mongoose.connect("mongodb://abed:abed123@ds137003.mlab.com:37003/yelpcamp");
-var url = mongoose.connect.DATABASEURL || "mongodb://localhost/demo" ;
+var url = process.env.DATABASEURL || "mongodb://localhost/demo" ;
 mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({extended: true}));
