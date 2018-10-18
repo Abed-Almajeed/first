@@ -1,5 +1,3 @@
-
-
 // require and use libraries, packages and js files
 var express       = require("express"),
     app           = express(),
@@ -23,8 +21,9 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
     
-// mongoose.connect("mongodb://localhost/demo");
-mongoose.connect("mongodb://abed:abed123@ds137003.mlab.com:37003/yelpcamp");
+// mongoose.connect("mongodb://abed:abed123@ds137003.mlab.com:37003/yelpcamp");
+var url = mongoose.connect.DATABASEURL || "mongodb://localhost/demo" ;
+mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
